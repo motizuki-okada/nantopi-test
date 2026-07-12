@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+body {
+    background-color: #EBF0FF;
+    color: #43474A;
+    line-height: 1.5;
+    width: 100dvw;
+    font-weight: 400;
+    overflow-x: hidden;
+    /*google fonts
+    font-family: "Kosugi Maru", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 100%;*/
+    /*googlefonts*/
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    display: block;
+    color: #43474A;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+li {
+    list-style: none;
+    color: #43474A;
+}
+
+img {
+    display: block;
+}
+
+span {
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}

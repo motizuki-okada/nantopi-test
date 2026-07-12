@@ -1,0 +1,41 @@
+//ブレークポイント設定--------------------------------------------------
+$breakpoints: (
+    'sp': 750px,
+    'tablet': 1024px,
+);
+@mixin media-sp {
+    @media (max-width: map-get($breakpoints, 'sp')) {
+        @content; 
+    }
+}
+@mixin media-tablet {
+    @media (max-width: map-get($breakpoints, 'tablet')){
+        @content;
+    }
+}
+
+//個別Layout--------------------------------------------------
+.l-mainvisual{
+    background-color: #2e2d2d;
+    color: white;
+    padding: 100px 0;
+}
+.l-mainBody{
+    width: 100%;
+}
+
+//その他--------------------------------------------------
+.mainvisual_text{
+    text-align: center;
+}
+.mainBody_content{
+    margin-top: 50px;
+}
+.mainBody_title{
+    font-size: 2rem;
+    text-align: center;   
+}
+.mainBody_text{
+    font-size: 1rem;
+    text-align: center;
+}

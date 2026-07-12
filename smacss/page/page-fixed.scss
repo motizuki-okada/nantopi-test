@@ -1,0 +1,125 @@
+@charset "UTF-8";
+//関数読み込み--------------------------------------------------
+@mixin title() {
+    font-size: 2rem;
+    line-height: 1.5;
+    text-align: center;
+
+    @include media-sp{
+        font-size: 1.75rem;
+    }
+}
+
+//ブレークポイント設定--------------------------------------------------
+$breakpoints: (
+    'sp': 750px,
+    'tablet': 1024px,
+);
+@mixin media-sp {
+    @media (max-width: map-get($breakpoints, 'sp')) {
+        @content; 
+    }
+}
+@mixin media-tablet {
+    @media (max-width: map-get($breakpoints, 'tablet')){
+        @content;
+    }
+}
+
+//個別Layout--------------------------------------------------
+.l-article{
+    width: min(72%, 980px);
+    margin: clamp(20px, 3vw, 32px) auto 0;
+
+    @include media-sp{
+        width: 88%;
+        margin-top: 16px;
+    }
+}
+
+//その他--------------------------------------------------
+.backBoard {
+    display: block;
+}
+.backBoard_item {
+    margin-top: 0;
+}
+.wp-block-post-title{
+    width: 100%;
+    box-sizing: border-box;
+    font-size: clamp(2rem, 1.55rem + 1vw, 2.8rem);
+    padding: clamp(26px, 3vw, 38px);
+    background-color: var(--gakuson-surface);
+    border-left: 10px solid rgba(97, 123, 250, 0.28);
+    border-radius: 28px;
+    margin-bottom: 36px;
+    box-shadow: var(--gakuson-shadow-soft);
+    color: #1F2940;
+
+    @include media-sp{
+        font-size: 24px;
+        padding: 22px 18px;
+        border-left-width: 8px;
+        border-radius: 22px;
+    }
+}
+.content{
+    width: 100%;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    padding: clamp(28px, 3vw, 40px);
+    border-radius: 28px;
+    border: 1px solid rgba(17, 29, 79, 0.08);
+    border-left: 8px solid rgba(97, 123, 250, 0.18);
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--gakuson-shadow-soft);
+    font-size: 17px;
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+    font-weight: 400;
+    color: #384153;
+
+    @include media-sp{
+        padding: 22px 18px;
+        border-radius: 22px;
+        border-left-width: 6px;
+        font-size: 16px;
+        line-height: 1.8;
+    }
+}
+
+.wantToRead_title{
+    @include title();
+    width: 76%;
+    margin: 0 auto 65px;
+    border-bottom:2px solid #d3d3d3;
+
+    @include media-sp{
+        font-size: 24px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+}
+
+.contentRail{
+    width: 92%;
+    margin: 88px auto 0;
+
+    @include media-sp{
+        width: 100%;
+        margin-top: 72px;
+    }
+}
+.contentRail .section_TitleConteiner{
+    margin-bottom: 28px;
+}
+.contentRail .article_emptyMessage{
+    margin-top: 0;
+}
+.l-tag--secondary{
+    margin-top: 88px;
+
+    @include media-sp{
+        margin-top: 72px;
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "gakusontheme-1",
+  "version": "1.0.0",
+  "description": "<br>\r - nantopi.comのwordpresstheme Version1.0<br>\r - @HarutoMizuno @Y-Mizutani2005によりv1作成<br>\r - 南山大学生による有志団体がくそんで管理更新中<br>",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "sass smacss/main:smacss/main --style=expanded --no-source-map",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:css": "sass --watch smacss/main:smacss/main --style=expanded --no-source-map"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.97.1"
+  }
+}

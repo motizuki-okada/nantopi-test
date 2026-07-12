@@ -1,0 +1,88 @@
+@charset "UTF-8";
+//ブレークポイント設定
+$breakpoints: (
+    'sp': 750px,
+    'tablet': 1024px,
+);
+@mixin media-sp {
+    @media (max-width: map-get($breakpoints, 'sp')) {
+        @content; 
+    }
+}
+@mixin media-tablet {
+    @media (max-width: map-get($breakpoints, 'tablet')){
+        @content;
+    }
+}
+
+#header{
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+}
+#main{
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+#footer{
+    margin-top: 72px;
+    background-color: #111D4F;
+
+    @include media-sp{
+        padding-top: 16px;
+    }
+}
+
+.l-empty {
+    width: 100%;
+}
+
+.l-article{
+    width: 70%;
+    margin: 78px auto 0;
+
+    @include media-sp{
+        width: 95%;
+        margin-top: 60px;
+    }
+}
+.l-tag{
+    width: 95%;
+    margin: 70px auto;
+
+    @include media-sp{
+        width: 85%;
+        margin-top: 60px;
+    }
+}
+
+.l-mainContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.l-wantToRead{
+    margin-top: 78px;
+    margin: 88px auto 0;
+    width: 92%;
+}
+.l-popular{
+    width: 92%;
+    margin: 88px auto 0;
+
+    @include media-sp{
+        margin-top: 111px;
+    }
+}
+.l-Hashtag {
+    width: 100%;
+    margin-top: 20px;
+
+    @include media-sp{
+        margin-top: 60px;
+        padding: 36px 0;
+    }
+}
+
