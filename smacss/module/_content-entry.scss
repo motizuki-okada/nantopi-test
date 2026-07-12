@@ -1,0 +1,546 @@
+$gakuson-content-breakpoint: 750px;
+
+.content {
+    > *:first-child {
+        margin-top: 0;
+    }
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
+
+    p {
+        margin-bottom: 2em;
+    }
+
+    // gdocs_to_wordpress の inline span は装飾用途が中心のため本文中では inline に戻す
+    span:not([class]),
+    span[style] {
+        display: inline;
+        line-height: inherit;
+    }
+
+    strong,
+    b {
+        font-weight: 700;
+    }
+
+    em {
+        font-style: italic;
+        background: linear-gradient(transparent 70%, rgba(189, 231, 255, 0.3) 70%);
+        padding: 0 2px;
+    }
+
+    del {
+        text-decoration-thickness: 0.08em;
+    }
+
+    u,
+    span[style*="underline"] {
+        text-underline-offset: 0.18em;
+        text-decoration-thickness: 0.08em;
+        text-decoration-skip-ink: auto;
+    }
+
+    mark,
+    span[style*="background-color"] {
+        padding: 0 0.2em;
+        border-radius: 0.25em;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+    }
+
+    .toc-list li a {
+        color: #43474A;
+    }
+
+    [id^="toc-heading-"] {
+        scroll-margin-top: 100px;
+    }
+
+    .wp-block-heading {
+        font-weight: 700;
+        line-height: 1.5;
+    }
+
+    h2,
+    h2.wp-block-heading {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 24px;
+        padding: 10px 15px;
+        background-color: transparent;
+        border-left: 6px solid #BDE7FF;
+        border-bottom: 2px solid #f0f0f0;
+        box-shadow: none;
+        margin-top: 4em;
+        margin-bottom: 1.5em;
+    }
+
+    h3,
+    h3.wp-block-heading,
+    .middle {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 20px;
+        padding: 5px 0 5px 10px;
+        border-left: 4px solid #BDE7FF;
+        margin-top: 3em;
+        margin-bottom: 1.2em;
+        font-weight: 700;
+    }
+
+    h4,
+    h4.wp-block-heading {
+        font-size: 17px;
+        font-weight: 600;
+        margin-top: 2.5em;
+        margin-bottom: 1em;
+        padding: 8px 12px;
+        background: linear-gradient(135deg, rgba(189, 231, 255, 0.15) 0%, rgba(189, 231, 255, 0.05) 100%);
+        border-radius: 6px;
+        border-left: 3px solid #BDE7FF;
+    }
+
+    .toc-container {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 1.5em 2em;
+        margin: 2em 0;
+        border-left: 4px solid #BDE7FF;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+        .toc-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0 0 1rem;
+            color: #43474A;
+        }
+
+        ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0;
+
+            li {
+                margin: 0.4rem 0;
+                padding-left: 0 !important;
+
+                &::before {
+                    content: none;
+                }
+
+                a {
+                    display: inline;
+                    text-decoration: none;
+                    color: #485269;
+                    transition: color 0.2s ease;
+                    background: none;
+                    padding: 0;
+
+                    &:hover,
+                    &:focus-visible {
+                        color: var(--gakuson-accent-strong);
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .toc-level-2 {
+            padding-left: 0 !important;
+        }
+
+        .toc-level-3 {
+            padding-left: 1.5em !important;
+        }
+
+        .toc-level-4 {
+            padding-left: 3em !important;
+        }
+    }
+
+    blockquote,
+    .wp-block-quote {
+        position: relative;
+        margin: 2em 0;
+        padding: 1.5em 1.5em 1.5em 3.5em;
+        background-color: #f9f9f9;
+        border-left: 4px solid #BDE7FF;
+        border-radius: 0 8px 8px 0;
+        color: #555;
+        font-style: italic;
+
+        &::before {
+            content: '\201C';
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            font-size: 3em;
+            line-height: 1;
+            color: rgba(189, 231, 255, 0.6);
+            font-family: serif;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        cite {
+            display: block;
+            text-align: right;
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 0.8em;
+            font-style: normal;
+        }
+    }
+
+    ul,
+    ul.wp-block-list {
+        margin: 1.5em 0;
+        padding-left: 0;
+        list-style: none;
+
+        li {
+            position: relative;
+            padding-left: 1.5em;
+            margin-bottom: 0.6em;
+            line-height: 1.7;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 2px;
+                top: 0.6em;
+                width: 7px;
+                height: 7px;
+                background-color: #BDE7FF;
+                border-radius: 50%;
+            }
+        }
+
+        ul {
+            margin: 0.5em 0;
+
+            li::before {
+                background-color: transparent;
+                border: 1px solid #BDE7FF;
+            }
+        }
+    }
+
+    ol,
+    ol.wp-block-list {
+        margin: 1.5em 0;
+        padding-left: 0;
+        list-style: none;
+        counter-reset: my-ol-counter;
+
+        li {
+            position: relative;
+            padding-left: 2em;
+            margin-bottom: 0.6em;
+            line-height: 1.7;
+
+            &::before {
+                counter-increment: my-ol-counter;
+                content: counter(my-ol-counter) ".";
+                position: absolute;
+                left: 0;
+                color: #BDE7FF;
+                font-weight: 700;
+                font-family: "Kosugi Maru", sans-serif;
+            }
+        }
+    }
+
+    table,
+    .wp-block-table {
+        margin: 2.5em 0;
+        overflow-x: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        -webkit-overflow-scrolling: touch;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+        }
+    }
+
+    table,
+    .wp-block-table table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        border: 1px solid #eee;
+
+        td,
+        th {
+            padding: 1em;
+            border-bottom: 1px solid #f0f0f0;
+            line-height: 1.6;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        th {
+            background: #f1f8ff;
+            font-weight: 700;
+            color: #444;
+            border-bottom: 2px solid #BDE7FF;
+            white-space: nowrap;
+            text-align: left;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+    }
+
+    figure,
+    .wp-block-image {
+        margin: 2.5em auto;
+        text-align: center;
+        max-width: 100%;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(189, 231, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 32px rgba(189, 231, 255, 0.45);
+            }
+        }
+
+        figcaption {
+            margin-top: 1em;
+            font-size: 14px;
+            color: #888;
+            font-style: italic;
+        }
+    }
+
+    a {
+        color: var(--gakuson-accent-strong);
+        text-decoration: underline;
+        text-decoration-color: rgba(97, 123, 250, 0.42);
+        text-underline-offset: 0.18em;
+        background: linear-gradient(transparent 88%, rgba(189, 231, 255, 0.42) 88%);
+        transition: color 0.25s ease, background 0.25s ease, text-decoration-color 0.25s ease;
+
+        &:hover,
+        &:focus-visible {
+            color: #3047A6;
+            background: linear-gradient(transparent 62%, rgba(189, 231, 255, 0.68) 62%);
+            text-decoration-color: rgba(48, 71, 166, 0.64);
+        }
+    }
+
+    p a,
+    li a,
+    blockquote a,
+    td a,
+    figcaption a,
+    span a {
+        display: inline;
+
+        &:hover,
+        &:focus-visible {
+            transform: none;
+        }
+    }
+
+    .chat-block {
+        margin: 2.5em 0;
+        padding: 0;
+        background: transparent;
+        border: none;
+    }
+
+    .chat-row {
+        display: flex;
+        margin-bottom: 1.5em;
+        align-items: flex-start;
+        gap: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .chat-icon {
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .chat-icon-img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        display: block;
+
+        .chat-icon & {
+            width: 100%;
+            height: 100%;
+            box-shadow: none;
+        }
+    }
+
+    .chat-bubble {
+        background: #f1f5f9;
+        border-radius: 18px;
+        padding: 1rem 1.25rem;
+        max-width: calc(100% - 84px);
+        position: relative;
+        font-size: 15px;
+        line-height: 1.7;
+        color: #444;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 15px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        p + p {
+            margin-top: 0.75em;
+        }
+    }
+
+    .chat-left {
+        flex-direction: row;
+
+        .chat-bubble {
+            border-top-left-radius: 4px;
+
+            &::before {
+                left: -8px;
+                border-width: 8px 8px 8px 0;
+                border-color: transparent #f1f5f9 transparent transparent;
+            }
+        }
+    }
+
+    .chat-right {
+        flex-direction: row-reverse;
+
+        .chat-bubble {
+            background: var(--gakuson-accent);
+            color: white;
+            border-top-right-radius: 4px;
+
+            &::before {
+                right: -8px;
+                border-width: 8px 0 8px 8px;
+                border-color: transparent transparent transparent var(--gakuson-accent);
+            }
+
+            a {
+                color: inherit;
+                text-decoration-color: rgba(255, 255, 255, 0.54);
+                background: none;
+            }
+        }
+    }
+
+    @media (max-width: $gakuson-content-breakpoint) {
+        p {
+            margin-bottom: 1.8rem;
+        }
+
+        h2,
+        h2.wp-block-heading {
+            font-size: 20px;
+            padding: 8px 10px;
+            border-left-width: 5px;
+            border-bottom-width: 1px;
+            margin-top: 3em;
+            margin-bottom: 1.2em;
+        }
+
+        h3,
+        h3.wp-block-heading,
+        .middle {
+            font-size: 18px;
+            padding: 5px 0 5px 8px;
+            border-left-width: 3px;
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+        }
+
+        h4,
+        h4.wp-block-heading {
+            font-size: 16px;
+            padding: 6px 10px;
+            margin-top: 2em;
+        }
+
+        .toc-container {
+            padding: 1rem;
+
+            .toc-level-3 {
+                padding-left: 1rem !important;
+            }
+
+            .toc-level-4 {
+                padding-left: 2rem !important;
+            }
+        }
+
+        figure,
+        .wp-block-image {
+            img {
+                border-radius: 8px;
+                box-shadow: 0 4px 16px rgba(189, 231, 255, 0.25);
+            }
+
+            figcaption {
+                font-size: 13px;
+            }
+        }
+
+        .chat-row {
+            gap: 10px;
+            margin-bottom: 1.2em;
+        }
+
+        .chat-icon,
+        .chat-icon-img {
+            width: 48px;
+            height: 48px;
+        }
+
+        .chat-bubble {
+            max-width: calc(100% - 64px);
+            font-size: 14px;
+            padding: 10px 14px;
+        }
+    }
+}

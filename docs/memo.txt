@@ -1,0 +1,65 @@
+gakuson-theme作業メモ
+
+
+$repo = "C:\Users\yuuki\Local Sites\gakusonver2\app\public\wp-content\themes\gakusonTheme-2-24"
+$ticket = "TK-01"
+
+
+
+@"
+最初に AGENTS.md と docs/3-17-yuki-design.md と docs/3-17-yuki-tickets.md を読んで。
+このrepoの作業ルール、設計意図、チケット順、依存関係を日本語で簡潔に整理して。
+コード変更はしない。
+要点を ./AgentLog.md に「## Overview」として追記して。
+"@ | codex.cmd --cd $repo
+
+
+@"
+最初に AGENTS.md と docs/3-17-yuki-design.md と docs/3-17-yuki-tickets.md を読んで。
+今回は $ticket だけ進める。他のチケットには触らない。
+design と ticket を確認しながら実装して、変更内容、判断理由、Touched files、Review notes / risks、Next steps を ./AgentLogに、TicketNumber.mdを新規作成し、記述して。
+このセッションでは docs/worklogs ではなく ./AgentLogのTicketNumver.md を運用ログとして使う。
+作業が終わったら commit はせず、ユーザーレビュー用の要約を書いて止まって。
+"@ | codex.cmd --cd $repo
+
+
+
+$review = @"
+- ここにレビュー内容
+- ここにレビュー内容
+"@
+
+@"
+前回の $ticket の続きです。
+最初に AGENTS.md と docs/3-17-yuki-design.md と docs/3-17-yuki-tickets.md を再確認して。
+以下のユーザーレビューを反映して。
+
+$review
+
+必要な修正だけを行い、対応内容と残リスクを ./AgentLog.md の「## $ticket」に追記して。
+作業後は再レビュー用の要約を書いて止まって。commit はしない。
+"@ | codex.cmd --cd $repo
+
+
+
+
+@"
+$ticket はユーザーレビュー承認済みです。
+最初に AGENTS.md と関連docsを再確認して、差分が $ticket の範囲に収まっているか確認して。
+必要なら軽微な整理をしてから commit して。コミットメッセージは「$ticket: ...」形式。
+最後に ./AgentLog.md の「## $ticket」に最終要約、検証内容、残リスク、commit hash を追記して。
+次のチケットには進まず止まって。
+"@ | codex.cmd --cd $repo
+
+
+
+$ticket = "TK-04"
+
+@"
+最初に AGENTS.md と docs/3-17-yuki-design.md と docs/3-17-yuki-tickets.md を読んで。
+今回は $ticket だけ進める。他のチケットには触らない。
+前チケットとの依存関係と着手前提を確認し、方針を ./AgentLogに、TicketNumber.mdを新規作成し、記述してから作業開始して。
+このセッションでは docs/worklogs ではなく ./AgentLogのTicketNumver.md を運用ログとして使う。
+
+作業が終わったら commit はせず、ユーザーレビュー用の要約を書いて止まって。
+"@ | codex.cmd --cd $repo
