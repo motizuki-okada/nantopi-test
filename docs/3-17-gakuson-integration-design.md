@@ -24,7 +24,6 @@
 ## v1 アーキテクチャ
 ```text
 WordPress
-  └─ GET /wp-json/gakuson/v1/picks
        └─ `nantopi-pick` 記事の軽量 JSON を返す
 
 gakuson (Static site on Xserver)
